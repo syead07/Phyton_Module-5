@@ -31,6 +31,61 @@ To write a Python program that uses **Hierarchical Inheritance** to input and di
 5. Display collected information using class methods.
 
 ## Program
-Add code here
+```
+# Base Class
+class Details:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+    def getName(self):
+        return self.name
+    def getAge(self):
+        return self.age
+# Derived Class 1: Employee
+class Employee(Details):
+    def __init__(self, name, age, employee_id, department):
+        # Call the base class constructor
+        super().__init__(name, age)
+        self.employee_id = employee_id
+        self.department = department
+    def getEmployeeDetails(self):
+        return f"ID: {self.employee_id} | Department: {self.department}"
+# Derived Class 2: Patient
+class Patient(Details):
+    def __init__(self, name, age, patient_id, disease):
+        # Call the base class constructor
+        super().__init__(name, age)
+        self.patient_id = patient_id
+        self.disease = disease
+    def getPatientDetails(self):
+        return f"Patient ID: {self.patient_id} | Disease: {self.disease}"
+# --- Main Program Execution ---
+if __name__ == "__main__":
+    print("--- Enter Employee Details ---")
+    emp_name = input("Enter Name: ")
+    emp_age = int(input("Enter Age: "))
+    emp_id = input("Enter Employee ID: ")
+    emp_dept = input("Enter Department: ")
+    # Creating Employee Object
+    emp = Employee(emp_name, emp_age, emp_id, emp_dept)
+    print("\n--- Enter Patient Details ---")
+    pat_name = input("Enter Name: ")
+    pat_age = int(input("Enter Age: "))
+    pat_id = input("Enter Patient ID: ")
+    pat_disease = input("Enter Disease: ")
+    # Creating Patient Object
+    pat = Patient(pat_name, pat_age, pat_id, pat_disease)
+    # Displaying Employee Details
+    print("\n\n===== Employee Information =====")
+    print(f"Name: {emp.getName()}")
+    print(f"Age: {emp.getAge()}")
+    print(emp.getEmployeeDetails())
+    # Displaying Patient Details
+    print("\n===== Patient Information =====")
+    print(f"Name: {pat.getName()}")
+    print(f"Age: {pat.getAge()}")
+    print(pat.getPatientDetails())
+```
 ## Sample Output
-
+## Result 
+ Hence, the Python program implementing Hierarchical Inheritance was successfully executed, demonstrating code reuse by deriving multiple child classes from a single base class.
