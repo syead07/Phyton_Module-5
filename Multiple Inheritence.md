@@ -24,6 +24,30 @@ To write a Python program to calculate **Add, Sub & Division** using **Multiple 
    - Display the results of the three operations.
 
 ## 💻 Program 
-Add code here
+```
+class saveetha:
+    def add(self, a, b):
+        return a + b
+    def div(self, a, b):
+        return a / b
+a = int(input())
+b = int(input())
+obj = saveetha()
+while True:
+    choice = int(input())
+    match choice:
+        case 1:
+            print("Result:", obj.add(a, b))
+        case 2:
+            print("Result:", obj.div(a, b))
+        case 0:
+            print("Exiting")
+            break
+        case _:
+            print("invalid choice")
+```
 ## Output Example
+<img width="485" height="416" alt="image" src="https://github.com/user-attachments/assets/b777bd55-3681-48fc-bf1b-934ea1e2d5fe" />
 
+##Result 
+   Thus the Python program to perform addition and division using class and switch case has been executed successfully.
